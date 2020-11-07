@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item android:id="@+id/compareItemsDeleteAll"
+          android:title="@string/menu_options_compare_delete_all"
+          android:icon="@drawable/delete_icon"
+          app:showAsAction="collapseActionView|ifRoom"
+          app:iconTint="@color/colorSecondaryText" />
+    
+    <item android:id="@+id/compareOptionsMenuSettings"
+          android:title="@string/menu_options_compare_delete_settings"
+          android:icon="@drawable/settings_icon"
+          app:showAsAction="never"
+          app:iconTint="@color/colorSecondaryText" />
+
+</menu>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/activity_shopping_item_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light" />
+
+            <EditText
+                android:id="@+id/create_edit_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:hint="@string/activity_shopping_item_item_name_hint"
+                android:text=""
+                android:inputType="text"
+                tools:ignore="Autofill"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/activity_shopping_item_item_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light" />
+
+            <EditText
+                android:id="@+id/create_edit_item_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:hint="@string/activity_shopping_item_item_desc_hint"
+                android:text=""
+                tools:ignore="Autofill"
+                android:lines="7"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/activity_shopping_item_unit_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light" />
+
+            <EditText
+                android:id="@+id/create_edit_item_unit_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:hint="@string/activity_shopping_item_unit_desc_hint"
+                android:text=""
+                tools:ignore="Autofill"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/activity_shopping_item_uom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light" />
+
+            <EditText
+                android:id="@+id/create_edit_item_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:hint="@string/activity_shopping_item_uom_hint"
+                android:text=""
+                tools:ignore="Autofill"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:text="@string/activity_shopping_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/create_edit_item_price_currency_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:layout_marginLeft="3dp"
+                android:layout_marginStart="3dp"
+                android:text="@string/default_currency_symbol"
+                android:textSize="13sp"
+                />
+
+            <EditText
+                android:id="@+id/create_edit_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:hint="@string/activity_shopping_item_price_hint"
+                android:text=""
+                tools:ignore="Autofill"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="@string/activity_shopping_item_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light" />
+
+            <EditText
+                android:id="@+id/create_edit_item_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:hint="@string/activity_shopping_item_quantity_hint"
+                android:text=""
+                tools:ignore="Autofill"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/create_edit_save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLight"
+                android:layout_weight="1"
+                android:text="@string/activity_shopping_item_save"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

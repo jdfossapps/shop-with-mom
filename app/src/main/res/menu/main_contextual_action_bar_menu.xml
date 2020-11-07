@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/share_cab"
+        android:icon="@drawable/share_icon"
+        android:title="@string/menu_cab_main_share"
+        android:contentDescription="@string/menu_cab_main_share_items"
+        app:showAsAction="ifRoom"
+        app:iconTint="@color/colorSecondaryText"
+        />
+
+    <item
+        android:id="@+id/delete_cab"
+        android:icon="@drawable/delete_icon"
+        android:title="@string/menu_cab_main_delete"
+        android:contentDescription="@string/menu_cab_main_delete_items"
+        app:showAsAction="ifRoom"
+        app:iconTint="@color/colorSecondaryText"
+        />
+
+</menu>

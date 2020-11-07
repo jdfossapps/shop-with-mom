@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/comparison_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="22sp"
+                android:gravity="center"
+                app:fontFamily="sans-serif-light" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/unit_of_messure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light" />
+
+            <EditText
+                android:id="@+id/compare_items_create_unit_of_messure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fontFamily="sans-serif-light"
+                android:hint="@string/unit_of_messure_hint"
+                android:text=""
+                android:inputType="numberDecimal"
+                tools:ignore="Autofill"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/compare_items_item_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="sans-serif-light"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
+                    android:text="@string/default_currency_symbol"
+                    android:textSize="13sp"
+                    />
+
+                <EditText
+                    android:id="@+id/compare_items_create_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fontFamily="sans-serif-light"
+                    android:hint="@string/price_hint"
+                    android:text=""
+                    tools:ignore="Autofill"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/compare_items_cancel_button"
+                android:layout_marginRight="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLight"
+                android:layout_weight="1"
+                android:text="@string/cancel"/>
+
+            <Button
+                android:id="@+id/compare_items_save_button"
+                android:layout_marginLeft="3dp"
+                android:layout_marginStart="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLight"
+                android:layout_weight="1"
+                android:text="@string/save"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recycler_compare_item_list"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/linear_layout_border_shadow"
+    android:baselineAligned="false"
+    android:layout_margin="4dp" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/compareItemUnitName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rv_compare_items_unit"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
+                    android:textSize="18sp" />
+            <TextView
+                    android:id="@+id/compareItemUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
+                    android:textSize="18sp" />
+        
+            <TextView
+                    android:id="@+id/compareItemPriceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/rv_compare_items_price"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:textSize="18sp" />
+
+            <TextView
+                    android:id="@+id/mainCompareItemCurrency"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/default_currency_symbol"
+                    android:textSize="18sp" />
+            
+            <TextView
+                android:id="@+id/mainCompareItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/mainCompareItemPPU"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/rv_compare_items_price_per_unit"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
+                    android:textSize="18sp"
+                    />
+            <TextView
+                    android:id="@+id/mainCompareItemPPUCurrency"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/default_currency_symbol"
+                    android:textSize="18sp" />
+            <TextView
+                android:id="@+id/mainCompareItemPricePerUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:drawablePadding="2dp"
+                android:tint="@color/colorSecondaryDark"
+                app:iconTint="@color/colorSecondaryDark"
+                app:drawableTint="@color/colorSecondaryDark"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                
+                <Button
+                        android:id="@+id/add_shopping_cart_button_compare_item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:background="@color/colorTransparent"
+                        app:drawableStartCompat="@drawable/add_shopping_cart_icon"
+                        app:drawableLeftCompat="@drawable/add_shopping_cart_icon"
+                        android:tint="@color/colorSecondaryDark"
+                        app:iconTint="@color/colorSecondaryDark"
+                        app:drawableTint="@color/colorSecondaryDark"
+                        android:drawableTint="@color/colorSecondaryDark"  />
+                
+                <Button
+                        android:id="@+id/delete_button_compare_item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:background="@color/colorTransparent"
+                        app:drawableStartCompat="@drawable/delete_icon"
+                        app:drawableLeftCompat="@drawable/delete_icon" 
+                        android:tint="@color/colorSecondaryDark"
+                        app:iconTint="@color/colorSecondaryDark"
+                        app:drawableTint="@color/colorSecondaryDark"
+                        android:drawableTint="@color/colorSecondaryDark" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

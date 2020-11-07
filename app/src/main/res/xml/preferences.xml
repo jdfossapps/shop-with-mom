@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="https://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="@string/general_shared_preferences_currency_category_currency">
+        <EditTextPreference
+            app:dialogTitle="@string/general_shared_preferences_currency_ecs"
+            app:key="defaultCurrencySymbol"
+            android:key="defaultCurrencySymbol"
+            app:summary="@string/general_shared_preferences_currency_summary"
+            app:title="@string/general_shared_preferences_currency_title"
+            android:inputType="text"
+            app:defaultValue ="@string/default_currency_symbol" />
+    </PreferenceCategory>
+</PreferenceScreen>

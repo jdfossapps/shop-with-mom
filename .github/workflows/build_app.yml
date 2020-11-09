@@ -23,6 +23,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Get keystore file
+      run: echo ${{ secrets.ANDROID_RELEASE_STORE_FILE }} | base64 -d > jdfossapps.keystore 
     # #Generates a zip with all the builds
     - uses: actions/upload-artifact@v2
       name: Generating APKs

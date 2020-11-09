@@ -20,7 +20,7 @@ jobs:
     - name: Get keystore file
       run: 'echo "${{ secrets.ANDROID_RELEASE_STORE_FILE }}" | base64 -d > jdfossapps.keystore'
     - name: List files
-      run: 'ls -lahr'
+      run: 'ls -lahd'
     - name: MD5 checksum
       run: md5sum jdfossapps.keystore
     - name: Create Gradle Wrapper

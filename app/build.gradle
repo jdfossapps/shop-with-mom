@@ -29,7 +29,7 @@ android {
 		release {
 			// storeFile file("$rootDir/"+System.getenv("ANDROID_RELEASE_STORE_FILE").toString() ? file("$rootDir/"+System.getenv("ANDROID_RELEASE_STORE_FILE").toString()) : file(""))
 			storeFile file("$rootDir/jdfossapps.keystore")
-			storePassword System.getenv("ANDROID_RELEASE_STORE_PASSWORD").toString()+" " ?: ""
+			storePassword System.getenv("ANDROID_RELEASE_STORE_PASSWORD").toString() ?: ""
 			keyAlias System.getenv("ANDROID_RELEASE_KEY_ALIAS").toString() ?: ""
 			keyPassword System.getenv("ANDROID_RELEASE_KEY_PASSWORD").toString() ?: ""
 

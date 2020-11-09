@@ -18,7 +18,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Get keystore file
-      run: 'echo ${{ secrets.ANDROID_RELEASE_STORE_FILE }} | base64 -d > jdfossapps.keystore '
+      run: 'echo "${{ secrets.ANDROID_RELEASE_STORE_FILE }}" | base64 -d > jdfossapps.keystore '
     - name: Create Gradle Wrapper
       run: gradle wrapper
     - name: Grant execute permission for gradlew

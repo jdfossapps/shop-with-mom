@@ -74,7 +74,8 @@ class ViewPagerFragmentItemList : Fragment() {
         itemViewModel.allItems.observe(viewLifecycleOwner, Observer { items ->
             items?.let { 
                 adapter.setItems(it)
-                shoppingListTotal.setText("${rootView.getContext().getResources().getString(R.string.view_pager_fragment_il_total)} ${totalCurrencySymbol}${adapter.itemsTotal}")
+                var updatedItemsTotal = "%.2f".format(adapter.itemsTotal).toDouble().toString()
+                shoppingListTotal.setText("${rootView.getContext().getResources().getString(R.string.view_pager_fragment_il_total)} ${totalCurrencySymbol}${updatedItemsTotal}")
             }
         })
 

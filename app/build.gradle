@@ -27,10 +27,7 @@ android {
 	signingConfigs {
 
 		release {
-			// storeFile file("$rootDir/"+System.getenv("ANDROID_RELEASE_STORE_FILE").toString() ? file("$rootDir/"+System.getenv("ANDROID_RELEASE_STORE_FILE").toString()) : file(""))
 			storeFile file("$rootDir/jdfossapps.keystore")
-			// println "project dir: " + project.projectDir
-			// println "root dir: " + project.rootDir
 			storePassword System.getenv("ANDROID_RELEASE_STORE_PASSWORD").toString() ?: ""
 			keyAlias System.getenv("ANDROID_RELEASE_KEY_ALIAS").toString() ?: ""
 			keyPassword System.getenv("ANDROID_RELEASE_KEY_PASSWORD").toString() ?: ""
@@ -58,16 +55,16 @@ android {
 	
 }
 
-// task addCurrentDate() {
-//     android.applicationVariants.all { variant ->
-//         variant.outputs.all { output ->
-//             def date = new Date().format("dd_MM_yyyy_hhmmss")
-//             def fileName = "shop-with-mom" + "_" + variant.name + "_" + 
-//                 variant.versionName + "_" + variant.versionCode + "_" + date + ".apk"
-//             output.outputFileName = fileName
-//         }
-//     }
-// }
+task addCurrentDate() {
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def date = new Date().format("ddMMyyyyhhmmss")
+            def fileName = "shop-with-mom" + "-" + variant.name + "-" + 
+                variant.versionName + "-" + variant.versionCode + "-" + date + ".apk"
+            output.outputFileName = fileName
+        }
+    }
+}
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: ['*.jar']) //Delete?

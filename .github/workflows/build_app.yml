@@ -40,7 +40,7 @@ jobs:
       with:
         name: builds
         path: |
-          ~/**/*.apk
+          ~/**/*release*.apk
         #path: '~/**/*.apk'
         #~/**/app-debug.apk
         #~/**/lint-results.html

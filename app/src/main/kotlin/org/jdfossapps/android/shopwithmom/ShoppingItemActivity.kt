@@ -89,7 +89,7 @@ class ShoppingItemActivity : AppCompatActivity() {
                     textItemPrice.text.toString().toDouble() / 
                         textItemUnit.text.toString().toDouble(),
                     textItemQuantity.text.toString().toDouble(),
-                    textItemPrice.text.toString().toDouble() / 
+                    textItemPrice.text.toString().toDouble() * 
                         textItemQuantity.text.toString().toDouble(),
                     Date()
                 )

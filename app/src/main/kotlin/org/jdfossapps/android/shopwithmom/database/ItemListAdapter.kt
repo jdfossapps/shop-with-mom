@@ -107,7 +107,7 @@ class ItemListAdapter internal constructor(
 
                                 mNumberFormat.setMaximumFractionDigits(4)
                                 textToSend += "${itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_ppu)} "
-                                textToSend += "${currencySymbol}${"%.4f".format(it.price_per_unit).toDouble().toString()}\n"
+                                textToSend += "${currencySymbol}${mNumberFormat.format(it.price_per_unit).toString()}\n"
                                 mNumberFormat.setMaximumFractionDigits(2)
                                 textToSend += "${itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_date)} "
                                 textToSend += "${localFormat.format(it.created_at!!)}\n\n"
@@ -213,11 +213,11 @@ class ItemListAdapter internal constructor(
             if (current.unit_description.isNullOrBlank()) 
             "${holder.itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_unit2)}" else current.unit_description.capitalize()
         holder.itemViewItemNameWithUnit.text = "${current.name}  ${itemWithUnit}: " +            
-            "%.2f".format(current.unit).toDouble().toString()
+            mNumberFormat.format(current.unit).toString()
 
-        holder.itemViewPrice.text = "%.2f".format(current.price).toDouble().toString()
-        holder.itemViewQuantity.text = "%.2f".format(current.quantity).toDouble().toString()
-        holder.itemViewItemTotal.text = "%.2f".format(current.item_total).toDouble().toString()
+        holder.itemViewPrice.text = mNumberFormat.format(current.price).toString()
+        holder.itemViewQuantity.text = mNumberFormat.format(current.quantity).toString()
+        holder.itemViewItemTotal.text = mNumberFormat.format(current.item_total).toString()
 
         holder.itemViewMainItemPriceCurrencyLabel.text =  sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getResources().getString(R.string.default_currency_symbol))
         holder.itemViewMmainItemTotalCurrencyLabel.text = sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getResources().getString(R.string.default_currency_symbol))

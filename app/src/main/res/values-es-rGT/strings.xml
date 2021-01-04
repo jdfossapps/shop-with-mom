@@ -64,6 +64,8 @@
 
 	<string name="compare_item_dialog_fragment_req_unit">La unidad es requerida</string>
 	<string name="compare_item_dialog_fragment_req_price">El precio es requerido</string>
+	<string name="compare_item_dialog_fragment_unit_gtz">La unidad de medida debe ser mayor que cero</string>
+	<string name="compare_item_dialog_fragment_price_gtz">El precio debe ser mayor que cero</string>
 
 	<string name="shopping_item_activity_in_req">El nombre del artículo es requerido</string>
 	<string name="shopping_item_activity_uom_req">La unidad de medida es requerida</string>

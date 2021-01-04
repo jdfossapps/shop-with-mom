@@ -99,7 +99,7 @@ class CompareItemDialogFragment : DialogFragment() {
         if (TextUtils.isEmpty(unit.text)) {
             unit.setError(view.getContext().getResources().getString(R.string.compare_item_dialog_fragment_req_unit))
             hasErrors = true
-        } else if (textItemUnit.text.toString().toDouble() <= 0) {
+        } else if (unit.text.toString().toDouble() <= 0) {
             unit.setError(resources.getString(R.string.compare_item_dialog_fragment_unit_gtz))
             hasErrors = true
         }
@@ -107,7 +107,7 @@ class CompareItemDialogFragment : DialogFragment() {
         if (TextUtils.isEmpty(price.text)) {
             price.setError(view.getContext().getResources().getString(R.string.compare_item_dialog_fragment_req_price))
             hasErrors = true
-        } else if (textItemUnit.text.toString().toDouble() <= 0) {
+        } else if (price.text.toString().toDouble() <= 0) {
             price.setError(resources.getString(R.string.compare_item_dialog_fragment_price_gtz))
             hasErrors = true
         }

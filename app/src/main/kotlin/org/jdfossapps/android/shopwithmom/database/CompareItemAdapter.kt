@@ -94,17 +94,13 @@ class CompareItemAdapter internal constructor(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         val item = items[position]
-
-        // holder.compareItemViewUnit.text = "%.2f".format(item.unit).toDouble().toString()
-        // holder.compareItemViewPrice.text = "%.2f".format(item.price).toDouble().toString()
-        // holder.compareItemViewPricePerUnit.text = "%.4f".format(item.price_per_unit).toDouble().toString()
-        
         val mNumberFormat : NumberFormat = NumberFormat.getInstance()
         mNumberFormat.setMaximumFractionDigits(2)
-        holder.compareItemViewUnit.text = mNumberFormat.format(item.unit).toString()
-        holder.compareItemViewPrice.text = mNumberFormat.format(3.141592).toString()
-        holder.compareItemViewPricePerUnit.text = "2"
 
+        holder.compareItemViewUnit.text = mNumberFormat.format(item.unit).toString()
+        holder.compareItemViewPrice.text = mNumberFormat.format(item.price).toString()
+        holder.compareItemViewPricePerUnit.text = mNumberFormat.format(item.price_per_unit).toString()
+        
         holder.compareItemViewMainCompareItemCurrency.text =  sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getResources().getString(R.string.default_currency_symbol))
         holder.compareItemViewMainCompareItemPPUCurrency.text = sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getString(R.string.default_currency_symbol))
 

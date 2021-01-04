@@ -28,6 +28,7 @@ import androidx.appcompat.app.AlertDialog
 import android.content.Intent
 import java.text.DateFormat
 import java.util.Locale
+import java.text.NumberFormat
 
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
@@ -46,6 +47,8 @@ class ItemListAdapter internal constructor(
     private val shoppingItemActivityRequestCode = 3
     private val editShoppingItemActivityRequestCode = 4
     var itemsTotal: Double = 0.0
+    private var mNumberFormat : NumberFormat = NumberFormat.getInstance()
+    mNumberFormat.setMaximumFractionDigits(2)
 
     private val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
 

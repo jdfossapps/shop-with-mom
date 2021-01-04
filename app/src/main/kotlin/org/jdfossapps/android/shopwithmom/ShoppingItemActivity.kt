@@ -61,7 +61,7 @@ class ShoppingItemActivity : AppCompatActivity() {
         editCompare = intent.getParcelableExtra(ShoppingItemActivity.EXTRA_REPLY)
         editCompare?.let {
             textItemUnit.setText(mNumberFormat.format(editCompare?.unit).toString())
-            textItemPrice.setText(mNumberFormat.format(editCompare?.price).toString(=)
+            textItemPrice.setText(mNumberFormat.format(editCompare?.price).toString())
         }
         if(editCompare == null) {
             editItem = intent.getParcelableExtra(ShoppingItemActivity.EXTRA_EDIT_ITEM)

@@ -17,6 +17,7 @@ import android.view.Menu
 import android.view.MenuItem
 
 import java.util.Date
+import java.text.NumberFormat
 
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
@@ -37,12 +38,15 @@ class ShoppingItemActivity : AppCompatActivity() {
 
     private lateinit var sharedPref: SharedPreferences
 
+    private var mNumberFormat : NumberFormat = NumberFormat.getInstance()
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping_item)
 
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+        mNumberFormat.setMaximumFractionDigits(2)
         textItemName = findViewById<EditText>(R.id.create_edit_item_name)
         textItemDescription = findViewById<EditText>(R.id.create_edit_item_description)
         textItemUnit = findViewById<EditText>(R.id.create_edit_item_unit)
@@ -56,18 +60,18 @@ class ShoppingItemActivity : AppCompatActivity() {
 
         editCompare = intent.getParcelableExtra(ShoppingItemActivity.EXTRA_REPLY)
         editCompare?.let {
-            textItemUnit.setText("%.2f".format(editCompare?.unit).toDouble().toString())
-            textItemPrice.setText("%.2f".format(editCompare?.price).toDouble().toString())
+            textItemUnit.setText(mNumberFormat.format(editCompare?.unit).toString())
+            textItemPrice.setText(mNumberFormat.format(editCompare?.price).toString(=)
         }
         if(editCompare == null) {
             editItem = intent.getParcelableExtra(ShoppingItemActivity.EXTRA_EDIT_ITEM)
             editItem?.let {
                 textItemName.setText(editItem?.name)
                 textItemDescription.setText(editItem?.description)
-                textItemUnit.setText("%.2f".format(editItem?.unit).toDouble().toString())
-                textItemPrice.setText("%.2f".format(editItem?.price).toDouble().toString())
+                textItemUnit.setText(mNumberFormat.format(editItem?.unit).toString())
+                textItemPrice.setText(mNumberFormat.format(editItem?.price).toString())
                 textItemUnitDescription.setText(editItem?.unit_description)
-                textItemQuantity.setText("%.2f".format(editItem?.quantity).toDouble().toString())
+                textItemQuantity.setText(mNumberFormat.format(editItem?.quantity).toString())
 
             }
         }

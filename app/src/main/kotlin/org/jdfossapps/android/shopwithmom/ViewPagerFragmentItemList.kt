@@ -40,6 +40,8 @@ import androidx.appcompat.app.AlertDialog
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 
+import java.text.NumberFormat
+
 class ViewPagerFragmentItemList : Fragment() {
     private val newItemActivityRequestCode = 1
     private val editItemActivityRequestCode = 2
@@ -51,6 +53,8 @@ class ViewPagerFragmentItemList : Fragment() {
     private lateinit var shoppingListTotal: TextView
 
     private lateinit var sharedPref: SharedPreferences 
+
+    private var mNumberFormat : NumberFormat = NumberFormat.getInstance()
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
@@ -74,7 +78,8 @@ class ViewPagerFragmentItemList : Fragment() {
         itemViewModel.allItems.observe(viewLifecycleOwner, Observer { items ->
             items?.let { 
                 adapter.setItems(it)
-                var updatedItemsTotal = "%.2f".format(adapter.itemsTotal).toDouble().toString()
+                mNumberFormat.setMaximumFractionDigits(2)
+                var updatedItemsTotal = mNumberFormat.format(adapter.itemsTotal).toString()
                 shoppingListTotal.setText("${rootView.getContext().getResources().getString(R.string.view_pager_fragment_il_total)} ${totalCurrencySymbol}${updatedItemsTotal}")
             }
         })

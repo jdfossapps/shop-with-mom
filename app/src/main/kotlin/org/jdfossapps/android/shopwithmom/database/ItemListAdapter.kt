@@ -48,7 +48,7 @@ class ItemListAdapter internal constructor(
     private val editShoppingItemActivityRequestCode = 4
     var itemsTotal: Double = 0.0
     private var mNumberFormat : NumberFormat = NumberFormat.getInstance()
-    mNumberFormat.setMaximumFractionDigits(2)
+    
 
     private val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
 
@@ -85,6 +85,7 @@ class ItemListAdapter internal constructor(
                         true
                     }
                     R.id.share_cab -> {
+                        mNumberFormat.setMaximumFractionDigits(2)
                         val sendIntent: Intent = Intent().apply {
                             action = Intent.ACTION_SEND
                             var textToSend = ""
@@ -92,20 +93,22 @@ class ItemListAdapter internal constructor(
                             val localFormat: DateFormat = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault())
                             cabSelectedItems.forEach { 
                                 textToSend += "${it.name} "
-                                textToSend += "${it.unit_description.capitalize()}: ${"%.2f".format(it.unit).toDouble().toString()}\n"
+                                textToSend += "${it.unit_description.capitalize()}: ${mNumberFormat.format(it.unit).toString()}\n"
                                 if(it.description.length > 0) {
                                     textToSend += "${it.description}\n"
                                 }
                                 textToSend += "${itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_price)} "
-                                textToSend += "${currencySymbol}${"%.2f".format(it.price).toDouble().toString()}\n"
+                                textToSend += "${currencySymbol}${mNumberFormat.format(it.price).toString()}\n"
 
                                 textToSend += "${itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_quantity)} "
-                                textToSend += "${"%.2f".format(it.quantity).toDouble().toString()} "
+                                textToSend += "${mNumberFormat.format(it.quantity).toString()} "
                                 textToSend += "${itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_item_total)} "
-                                textToSend += "${currencySymbol}${"%.2f".format(it.item_total).toDouble().toString()}\n"
+                                textToSend += "${currencySymbol}${mNumberFormat.format(it.item_total).toString()}\n"
 
+                                mNumberFormat.setMaximumFractionDigits(4)
                                 textToSend += "${itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_ppu)} "
                                 textToSend += "${currencySymbol}${"%.4f".format(it.price_per_unit).toDouble().toString()}\n"
+                                mNumberFormat.setMaximumFractionDigits(2)
                                 textToSend += "${itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_date)} "
                                 textToSend += "${localFormat.format(it.created_at!!)}\n\n"
                             }

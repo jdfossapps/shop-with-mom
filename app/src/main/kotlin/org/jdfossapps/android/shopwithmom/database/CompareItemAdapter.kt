@@ -99,8 +99,9 @@ class CompareItemAdapter internal constructor(
         // holder.compareItemViewPrice.text = "%.2f".format(item.price).toDouble().toString()
         // holder.compareItemViewPricePerUnit.text = "%.4f".format(item.price_per_unit).toDouble().toString()
         
-        holder.compareItemViewUnit.text = NumberFormat.getInstance().format(item.unit).toString()
-        holder.compareItemViewPrice.text = "1"
+        val mNumberFormat : NumberFormat = NumberFormat.getInstance()
+        holder.compareItemViewUnit.text = mNumberFormat.format(item.unit).toString()
+        holder.compareItemViewPrice.text = mNumberFormat.format(1.2).toString()
         holder.compareItemViewPricePerUnit.text = "2"
 
         holder.compareItemViewMainCompareItemCurrency.text =  sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getResources().getString(R.string.default_currency_symbol))

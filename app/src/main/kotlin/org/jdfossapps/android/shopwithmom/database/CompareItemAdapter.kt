@@ -99,7 +99,7 @@ class CompareItemAdapter internal constructor(
         // holder.compareItemViewPrice.text = "%.2f".format(item.price).toDouble().toString()
         // holder.compareItemViewPricePerUnit.text = "%.4f".format(item.price_per_unit).toDouble().toString()
         
-        holder.compareItemViewUnit.text = "0"
+        holder.compareItemViewUnit.text = NumberFormat.getInstance().format(item.unit).toString()
         holder.compareItemViewPrice.text = "1"
         holder.compareItemViewPricePerUnit.text = "2"
 

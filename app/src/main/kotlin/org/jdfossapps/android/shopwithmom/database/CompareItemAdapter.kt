@@ -100,8 +100,8 @@ class CompareItemAdapter internal constructor(
         // holder.compareItemViewPricePerUnit.text = "%.4f".format(item.price_per_unit).toDouble().toString()
         
         holder.compareItemViewUnit.text = "0"
-        holder.compareItemViewPrice.text = "0"
-        holder.compareItemViewPricePerUnit.text = "0"
+        holder.compareItemViewPrice.text = "1"
+        holder.compareItemViewPricePerUnit.text = "2"
 
         holder.compareItemViewMainCompareItemCurrency.text =  sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getResources().getString(R.string.default_currency_symbol))
         holder.compareItemViewMainCompareItemPPUCurrency.text = sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getString(R.string.default_currency_symbol))

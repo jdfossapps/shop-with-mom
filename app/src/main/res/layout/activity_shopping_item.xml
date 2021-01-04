@@ -33,7 +33,9 @@
                 android:text=""
                 android:inputType="text"
                 tools:ignore="Autofill"
-                android:textSize="18sp" />
+                android:textSize="18sp" >
+                <requestFocus />
+                </EditText> 
 
             <TextView
                 android:text="@string/activity_shopping_item_item_desc"

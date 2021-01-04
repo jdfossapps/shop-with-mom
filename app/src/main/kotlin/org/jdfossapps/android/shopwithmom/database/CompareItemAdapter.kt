@@ -30,6 +30,8 @@ import org.jdfossapps.android.shopwithmom.CompareItemDialogFragment
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 
+import java.text.NumberFormat
+
 class CompareItemAdapter internal constructor(
         context: Context
 ) : RecyclerView.Adapter<CompareItemAdapter.ItemViewHolder>() {
@@ -93,10 +95,14 @@ class CompareItemAdapter internal constructor(
 
         val item = items[position]
 
-        holder.compareItemViewUnit.text = "%.2f".format(item.unit).toDouble().toString()
-        holder.compareItemViewPrice.text = "%.2f".format(item.price).toDouble().toString()
-        holder.compareItemViewPricePerUnit.text = "%.4f".format(item.price_per_unit).toDouble().toString()
+        // holder.compareItemViewUnit.text = "%.2f".format(item.unit).toDouble().toString()
+        // holder.compareItemViewPrice.text = "%.2f".format(item.price).toDouble().toString()
+        // holder.compareItemViewPricePerUnit.text = "%.4f".format(item.price_per_unit).toDouble().toString()
         
+        holder.compareItemViewUnit.text = "0"
+        holder.compareItemViewPrice.text = "0"
+        holder.compareItemViewPricePerUnit.text = "0"
+
         holder.compareItemViewMainCompareItemCurrency.text =  sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getResources().getString(R.string.default_currency_symbol))
         holder.compareItemViewMainCompareItemPPUCurrency.text = sharedPref.getString("defaultCurrencySymbol", holder.itemView.getContext().getString(R.string.default_currency_symbol))
 

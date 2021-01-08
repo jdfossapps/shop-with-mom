@@ -1,0 +1,112 @@
+<resources>
+	<string name="app_name">Comprar com a mãe</string>
+
+	<string name="default_currency_symbol">$</string>
+	
+	<string name="comparison_entry">Dados de comparação</string>
+	<string name="unit_of_messure">Unidade de medida</string>
+	<string name="unit_of_messure_hint">Unidade de medida&#8230;</string>
+	<string name="price">Preço</string>
+	<string name="price_hint">Preço&#8230;</string>
+	<string name="cancel">Cancelar</string>
+	<string name="save">Salvar</string>
+
+	<string name="fab_add">Adicionar</string>
+
+	<string name="total_placeholder">Total&#8230;</string>
+	
+	<string name="rv_compare_items_unit">Unidade:</string>
+	<string name="rv_compare_items_price">Preço:</string>
+	<string name="rv_compare_items_price_per_unit">preço unitário:</string>
+
+	<string name="rv_item_quantity">Quantidade:</string>
+	<string name="rv_item_price">Preço:</string>
+	<string name="rv_item_item_total">Total do item:</string>
+
+	<string name="menu_close">Fechar</string>
+	
+	<string name="menu_cab_compare_items_delete">Excluir</string>
+	<string name="menu_cab_compare_items_delete_description">Excluir itens</string>
+	
+	<string name="menu_options_compare_delete_all">Excluir tudo</string>
+	<string name="menu_options_compare_delete_settings">Configurações</string>
+
+	<string name="menu_cab_main_share">Compartilhar</string>
+	<string name="menu_cab_main_share_items">Compartilhar itens</string>
+	<string name="menu_cab_main_delete">Excluir</string>
+	<string name="menu_cab_main_delete_items">Excluir itens</string>
+	
+	<string name="menu_options_search">Procurar</string>
+	<string name="menu_options_delete_shopping_cart">Excluir carrinho de compras</string>
+	<string name="menu_options_settings">Configurações</string>
+
+	<string name="general_shared_preferences_currency_category_currency">Moeda</string>
+	<string name="general_shared_preferences_currency_ecs">Digite o símbolo da moeda</string>
+	<string name="general_shared_preferences_currency_summary">O símbolo da moeda que será usado para todo o aplicativo</string>
+	<string name="general_shared_preferences_currency_title">Símbolo da moeda</string>
+
+	<string name="compare_item_adapter_confirm_delete_action_title">Cofirmar ação de exclusão</string>
+	<string name="compare_item_adapter_confirm_delete_action_msg">Você tem certeza de que quer excluir este item?</string>
+	<string name="compare_item_adapter_confirm_delete_action_yes">Sim</string>
+	<string name="compare_item_adapter_confirm_delete_action_no">Não</string>
+
+	<string name="item_adapter_confirm_delete_action_title">Confirmar ação de exclusão</string>
+	<string name="item_adapter_confirm_delete_action_msg">Você tem certeza de que quer excluir os itens selecionados?</string>
+	<string name="item_adapter_confirm_delete_action_yes">Sim</string>
+	<string name="item_adapter_confirm_delete_action_no">Não</string>
+	<string name="item_adapter_share_cab_price">Preço:</string>
+	<string name="item_adapter_share_cab_quantity">Quantidade:</string>
+	<string name="item_adapter_share_cab_item_total">Total do item:</string>
+	<string name="item_adapter_share_cab_ppu">preço unitário:</string>
+	<string name="item_adapter_share_cab_date">Data:</string>
+	<string name="item_adapter_share_cab_selected">selecionado</string>
+	<string name="item_adapter_share_cab_unit2">Unidade</string>
+
+	<string name="compare_item_dialog_fragment_req_unit">A unidade é necessária</string>
+	<string name="compare_item_dialog_fragment_req_price">O preço é necessário</string>
+	<string name="compare_item_dialog_fragment_unit_gtz">A unidade de medida deve ser maior que zero</string>
+	<string name="compare_item_dialog_fragment_price_gtz">O preço deve ser maior que zero</string>
+
+	<string name="shopping_item_activity_in_req">O nome do item é necessário</string>
+	<string name="shopping_item_activity_uom_req">A unidade de medida é necessária</string>
+	<string name="shopping_item_activity_uom_gtz">A unidade de medida deve ser maior que zero</string>
+	<string name="shopping_item_activity_price_req">O preço é necessário</string>
+	<string name="shopping_item_activity_price_gtz">O preço deve ser maior que zero</string>
+	<string name="shopping_item_activity_ud_req">A descrição da unidade é necessária</string>
+	<string name="shopping_item_activity_quantity_req">A quantidade é necessária</string>
+	<string name="shopping_item_activity_quantity_gtz">A quantidade deve ser maior que zero</string>
+
+	<string name="tabbed_activity_item_comparisons">Comparações de itens</string>
+	<string name="tabbed_activity_shopping_list">Lista de compras</string>
+
+	<string name="view_pager_fragment_ci_confirm_delete_action_title">Confirmar a ação de exclusão</string>
+	<string name="view_pager_fragment_ci_confirm_delete_action_msg">Você tem certeza de que quer excluir todos os itens?</string>
+	<string name="view_pager_fragment_ci_confirm_delete_action_yes">Sim</string>
+	<string name="view_pager_fragment_ci_confirm_delete_action_no">Não</string>
+
+	<string name="view_pager_fragment_il_total">Total</string>
+	<string name="view_pager_fragment_il_confirm_delete_action_title">Confirmar a ação de exclusão</string>
+	<string name="view_pager_fragment_il_confirm_delete_action_msg">Você tem certeza de que quer excluir todos os itens da lista de compras?</string>
+	<string name="view_pager_fragment_il_confirm_delete_action_yes">Sim</string>
+	<string name="view_pager_fragment_il_confirm_delete_action_no">Não</string>
+
+	<string name="activity_shopping_item_item_name">Nome do item</string>
+	<string name="activity_shopping_item_item_name_hint">Nome do item&#8230;</string>
+	<string name="activity_shopping_item_item_desc">Descrição do item</string>
+	<string name="activity_shopping_item_item_desc_hint">Descrição do item&#8230;</string>
+	<string name="activity_shopping_item_unit_desc">Descrição da unidade</string>
+	<string name="activity_shopping_item_unit_desc_hint">Descrição da unidade&#8230;</string>
+	<string name="activity_shopping_item_uom">Unidade de medida</string>
+	<string name="activity_shopping_item_uom_hint">Unidade de medida&#8230;</string>
+	<string name="activity_shopping_item_price">Preço</string>
+	<string name="activity_shopping_item_price_hint">Preço&#8230;</string>
+	<string name="activity_shopping_item_quantity">Quantidade</string>
+	<string name="activity_shopping_item_quantity_hint">Quantidade&#8230;</string>
+	<string name="activity_shopping_item_save">Salvar</string>
+
+	<string name="searchable_search_hint">Procurar</string>
+
+	<string name="activity_settings_title">Configurações</string>
+
+
+</resources>

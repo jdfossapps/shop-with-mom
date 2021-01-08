@@ -1,0 +1,1 @@
+Adding ptbr translation. Thanks to Mezysinc( https://github.com/mezysinc )

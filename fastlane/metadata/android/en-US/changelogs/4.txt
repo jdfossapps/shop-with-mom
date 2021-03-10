@@ -1,0 +1,1 @@
+Improved english strings and quirks. Thanks to Flying-press ( https://github.com/flying-press )

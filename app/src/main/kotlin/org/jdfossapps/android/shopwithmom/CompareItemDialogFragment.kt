@@ -68,7 +68,7 @@ class CompareItemDialogFragment : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         
         compareViewModel = ViewModelProvider(this).get(CompareItemViewModel::class.java)
-        unit = view.findViewById<EditText>(R.id.compare_items_create_unit_of_messure)
+        unit = view.findViewById<EditText>(R.id.compare_items_create_unit_of_measure)
         price = view.findViewById<EditText>(R.id.compare_items_create_price)
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(view.getContext())

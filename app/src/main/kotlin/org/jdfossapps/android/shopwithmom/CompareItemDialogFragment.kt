@@ -82,9 +82,7 @@ class CompareItemDialogFragment : DialogFragment() {
         compareToEdit = arguments?.getParcelable(KEY_COMPARE)
         compareToEdit?.let { 
             unit.setText(mNumberFormat.format(it.unit).toString())
-            // unit.setText(it.unit.toString())
             price.setText(mNumberFormat.format(it.price).toString())
-            // price.setText(it.price.toString())
          }
 
         setupClickListeners(view)
@@ -105,8 +103,7 @@ class CompareItemDialogFragment : DialogFragment() {
         if (TextUtils.isEmpty(unit.text)) {
             unit.setError(view.getContext().getResources().getString(R.string.compare_item_dialog_fragment_req_unit))
             hasErrors = true
-        // } else if (unit.text.toString().toDouble() <= 0) {
-        } else if (mNumberFormat.parse(unit.text.toString()).toDouble() <= 0) {
+        } else if (mNumberFormat.parse(unit.text.toString())!!.toDouble() <= 0) {
             unit.setError(resources.getString(R.string.compare_item_dialog_fragment_unit_gtz))
             hasErrors = true
         }
@@ -114,8 +111,7 @@ class CompareItemDialogFragment : DialogFragment() {
         if (TextUtils.isEmpty(price.text)) {
             price.setError(view.getContext().getResources().getString(R.string.compare_item_dialog_fragment_req_price))
             hasErrors = true
-        // } else if (price.text.toString().toDouble() <= 0) {
-        } else if (mNumberFormat.parse(price.text.toString()).toDouble() <= 0) {
+        } else if (mNumberFormat.parse(price.text.toString())!!.toDouble() <= 0) {
             price.setError(resources.getString(R.string.compare_item_dialog_fragment_price_gtz))
             hasErrors = true
         }
@@ -129,23 +125,18 @@ class CompareItemDialogFragment : DialogFragment() {
         saveButton.setOnClickListener {
             if (!userInputHasErrors(view)) {
                 compareToEdit?.let {
-                    it.unit = mNumberFormat.parse(unit.text.toString()).toDouble()
-                    // it.unit = unit.text.toString().toDouble()
-                    it.price = mNumberFormat.parse(price.text.toString()).toDouble()
-                    // it.price = price.text.toString().toDouble()
+                    it.unit = mNumberFormat.parse(unit.text.toString())!!.toDouble()
+                    it.price = mNumberFormat.parse(price.text.toString())!!.toDouble()
                     it.price_per_unit = it.price / it.unit
                 }
                 if(compareToEdit != null ) {
                     compareViewModel.update(compareToEdit!!)
                 } else {
                     compareViewModel.insert(Compare(0,
-                    mNumberFormat.parse(unit.text.toString()).toDouble(),
-                    // unit.text.toString().toDouble(),
-                    mNumberFormat.parse(price.text.toString()).toDouble(),
-                    // price.text.toString().toDouble(),
-                    mNumberFormat.parse(price.text.toString()).toDouble() /
-                        mNumberFormat.parse(unit.text.toString()).toDouble()
-                    // price.text.toString().toDouble() / unit.text.toString().toDouble()
+                    mNumberFormat.parse(unit.text.toString())!!.toDouble(),
+                    mNumberFormat.parse(price.text.toString())!!.toDouble(),
+                    mNumberFormat.parse(price.text.toString())!!.toDouble() /
+                        mNumberFormat.parse(unit.text.toString())!!.toDouble()
                     ))
                 }
                 dismiss()

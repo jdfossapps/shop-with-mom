@@ -149,8 +149,8 @@ class ItemListAdapter internal constructor(
         init {
 
             itemView.setOnClickListener { v: View ->
+                val position: Int = bindingAdapterPosition
                 if (!multiSelectOn) {
-                    val position: Int = bindingAdapterPosition
                     val intent = Intent( (v.getContext() as AppCompatActivity) , ShoppingItemActivity::class.java)
                     intent.putExtra(ShoppingItemActivity.EXTRA_EDIT_ITEM, items[position] )
                     (v.getContext() as AppCompatActivity).startActivityForResult(intent, editShoppingItemActivityRequestCode)
@@ -252,5 +252,3 @@ class ItemListAdapter internal constructor(
     override fun getItemCount() = items.size
 
 }
-
-

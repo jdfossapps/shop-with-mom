@@ -35,17 +35,17 @@
                 android:layout_height="wrap_content">
 
             <TextView
-                android:text="@string/unit_of_messure"
+                android:text="@string/unit_of_measure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:fontFamily="sans-serif-light" />
 
             <EditText
-                android:id="@+id/compare_items_create_unit_of_messure"
+                android:id="@+id/compare_items_create_unit_of_measure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:fontFamily="sans-serif-light"
-                android:hint="@string/unit_of_messure_hint"
+                android:hint="@string/unit_of_measure_hint"
                 android:text=""
                 android:inputType="numberDecimal"
                 tools:ignore="Autofill"

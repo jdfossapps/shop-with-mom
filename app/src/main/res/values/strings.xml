@@ -4,8 +4,8 @@
 	<string name="default_currency_symbol">$</string>
 	
 	<string name="comparison_entry">Comparison entry</string>
-	<string name="unit_of_messure">Unit of messure</string>
-	<string name="unit_of_messure_hint">Unit of messure&#8230;</string>
+	<string name="unit_of_measure">Unit of measure</string>
+	<string name="unit_of_measure_hint">Unit of measure&#8230;</string>
 	<string name="price">Price</string>
 	<string name="price_hint">Price&#8230;</string>
 	<string name="cancel">Cancel</string>
@@ -64,12 +64,12 @@
 
 	<string name="compare_item_dialog_fragment_req_unit">Unit is required</string>
 	<string name="compare_item_dialog_fragment_req_price">Price is required</string>
-	<string name="compare_item_dialog_fragment_unit_gtz">Unit of messure must be greater than zero</string>
+	<string name="compare_item_dialog_fragment_unit_gtz">Unit of measure must be greater than zero</string>
 	<string name="compare_item_dialog_fragment_price_gtz">Price must be greater than zero</string>
 
 	<string name="shopping_item_activity_in_req">Item name is required</string>
-	<string name="shopping_item_activity_uom_req">Unit of messure is required</string>
-	<string name="shopping_item_activity_uom_gtz">Unit of messure must be greater than zero</string>
+	<string name="shopping_item_activity_uom_req">Unit of measure is required</string>
+	<string name="shopping_item_activity_uom_gtz">Unit of measure must be greater than zero</string>
 	<string name="shopping_item_activity_price_req">Price is required</string>
 	<string name="shopping_item_activity_price_gtz">Price must be greater than zero</string>
 	<string name="shopping_item_activity_ud_req">Unit description is required</string>
@@ -96,8 +96,8 @@
 	<string name="activity_shopping_item_item_desc_hint">Item description&#8230;</string>
 	<string name="activity_shopping_item_unit_desc">Unit description</string>
 	<string name="activity_shopping_item_unit_desc_hint">Unit description&#8230;</string>
-	<string name="activity_shopping_item_uom">Unit of messure</string>
-	<string name="activity_shopping_item_uom_hint">Unit of messure&#8230;</string>
+	<string name="activity_shopping_item_uom">Unit of measure</string>
+	<string name="activity_shopping_item_uom_hint">Unit of measure&#8230;</string>
 	<string name="activity_shopping_item_price">Price</string>
 	<string name="activity_shopping_item_price_hint">Price&#8230;</string>
 	<string name="activity_shopping_item_quantity">Quantity</string>

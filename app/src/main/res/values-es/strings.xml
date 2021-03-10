@@ -4,8 +4,8 @@
 	<string name="default_currency_symbol">$</string>
 	
 	<string name="comparison_entry">Ingreso de comparación</string>
-	<string name="unit_of_messure">Unidad de medida</string>
-	<string name="unit_of_messure_hint">Unidad de medida&#8230;</string>
+	<string name="unit_of_measure">Unidad de medida</string>
+	<string name="unit_of_measure_hint">Unidad de medida&#8230;</string>
 	<string name="price">Precio</string>
 	<string name="price_hint">Precio&#8230;</string>
 	<string name="cancel">Cancelar</string>

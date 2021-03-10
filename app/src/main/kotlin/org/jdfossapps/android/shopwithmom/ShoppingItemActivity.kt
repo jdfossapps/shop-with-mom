@@ -31,8 +31,8 @@ class ShoppingItemActivity : AppCompatActivity() {
     private lateinit var textItemUnitDescription: EditText
     private lateinit var textItemQuantity: EditText
     private lateinit var textItemPriceCurrency: TextView
-    
-    
+
+
     private var editCompare: Compare? = null
     private var editItem: Item? = null
 
@@ -53,7 +53,7 @@ class ShoppingItemActivity : AppCompatActivity() {
         textItemPrice = findViewById<EditText>(R.id.create_edit_item_price)
         textItemUnitDescription = findViewById<EditText>(R.id.create_edit_item_unit_description)
         textItemQuantity = findViewById<EditText>(R.id.create_edit_item_quantity)
-        
+
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
         textItemPriceCurrency = findViewById<TextView>(R.id.create_edit_item_price_currency_label)
         textItemPriceCurrency.setText(sharedPref.getString("defaultCurrencySymbol", resources.getString(R.string.default_currency_symbol)))
@@ -79,23 +79,23 @@ class ShoppingItemActivity : AppCompatActivity() {
         val saveButton = findViewById<Button>(R.id.create_edit_save_button)
 
         saveButton.setOnClickListener {
-            
+
             if (!userInputHasErrors()) {
                 val replyIntent = Intent()
 
                 var item: Item = Item(
-                    0,
-                    textItemName.text.toString(),
-                    textItemDescription.text.toString(),
-                    textItemUnitDescription.text.toString(),
-                    textItemUnit.text.toString().toDouble(),
-                    textItemPrice.text.toString().toDouble(),
-                    textItemPrice.text.toString().toDouble() / 
-                        textItemUnit.text.toString().toDouble(),
-                    textItemQuantity.text.toString().toDouble(),
-                    textItemPrice.text.toString().toDouble() * 
-                        textItemQuantity.text.toString().toDouble(),
-                    Date()
+                        0,
+                        textItemName.text.toString(),
+                        textItemDescription.text.toString(),
+                        textItemUnitDescription.text.toString(),
+                        mNumberFormat.parse(textItemUnit.text.toString()).toDouble(),
+                        mNumberFormat.parse(textItemPrice.text.toString()).toDouble(),
+                        mNumberFormat.parse(textItemPrice.text.toString()).toDouble() /
+                            mNumberFormat.parse(textItemUnit.text.toString()).toDouble(),
+                        mNumberFormat.parse(textItemQuantity.text.toString()).toDouble(),
+                        mNumberFormat.parse(textItemPrice.text.toString()).toDouble() *
+                            mNumberFormat.parse(textItemQuantity.text.toString()).toDouble(),
+                        Date()
                 )
 
                 if(editItem == null) {
@@ -104,13 +104,13 @@ class ShoppingItemActivity : AppCompatActivity() {
                     editItem?.name = textItemName.text.toString()
                     editItem?.description = textItemDescription.text.toString()
                     editItem?.unit_description = textItemUnitDescription.text.toString()
-                    editItem?.unit = textItemUnit.text.toString().toDouble()
-                    editItem?.price = textItemPrice.text.toString().toDouble()
-                    editItem?.price_per_unit = textItemPrice.text.toString().toDouble() / 
-                        textItemUnit.text.toString().toDouble()
-                        editItem?.quantity = textItemQuantity.text.toString().toDouble()
-                    editItem?.item_total = textItemPrice.text.toString().toDouble() * 
-                        textItemQuantity.text.toString().toDouble()
+                    editItem?.unit = mNumberFormat.parse(textItemUnit.text.toString()).toDouble()
+                    editItem?.price = mNumberFormat.parse(textItemPrice.text.toString()).toDouble()
+                    editItem?.price_per_unit = mNumberFormat.parse(textItemPrice.text.toString()).toDouble() /
+                        mNumberFormat.parse(textItemUnit.text.toString()).toDouble()
+                    editItem?.quantity = mNumberFormat.parse(textItemQuantity.text.toString()).toDouble()
+                    editItem?.item_total = mNumberFormat.parse(textItemPrice.text.toString()).toDouble() *
+                        mNumberFormat.parse(textItemQuantity.text.toString()).toDouble()
                     replyIntent.putExtra(EXTRA_EDIT_ITEM, editItem)
                 }
                 setResult(Activity.RESULT_OK, replyIntent)
@@ -132,7 +132,7 @@ class ShoppingItemActivity : AppCompatActivity() {
         if (TextUtils.isEmpty(textItemUnit.text.toString())) {
             textItemUnit.setError(resources.getString(R.string.shopping_item_activity_uom_req))
             hasErrors = true
-        } else if (textItemUnit.text.toString().toDouble() <= 0) {
+        } else if (mNumberFormat.parse(textItemUnit.text.toString()).toDouble() <= 0) {
             textItemUnit.setError(resources.getString(R.string.shopping_item_activity_uom_gtz))
             hasErrors = true
         }
@@ -140,7 +140,7 @@ class ShoppingItemActivity : AppCompatActivity() {
         if (TextUtils.isEmpty(textItemPrice.text.toString())) {
             textItemPrice.setError(resources.getString(R.string.shopping_item_activity_price_req))
             hasErrors = true
-        } else if (textItemPrice.text.toString().toDouble() <= 0) {
+        } else if (mNumberFormat.parse(textItemPrice.text.toString()).toDouble() <= 0) {
             textItemPrice.setError(resources.getString(R.string.shopping_item_activity_price_gtz))
             hasErrors = true
         }
@@ -153,7 +153,7 @@ class ShoppingItemActivity : AppCompatActivity() {
         if (TextUtils.isEmpty(textItemQuantity.text.toString())) {
             textItemQuantity.setError(resources.getString(R.string.shopping_item_activity_quantity_req))
             hasErrors = true
-        } else if (textItemQuantity.text.toString().toDouble() <= 0) {
+        } else if (mNumberFormat.parse(textItemQuantity.text.toString()).toDouble() <= 0) {
             textItemQuantity.setError(resources.getString(R.string.shopping_item_activity_quantity_gtz))
             hasErrors = true
         }
@@ -167,4 +167,3 @@ class ShoppingItemActivity : AppCompatActivity() {
         const val EXTRA_EDIT_ITEM = "org.jdfossapps.android.shopwithmom.CREATE_EDIT_ITEM_REPLY"
     }
 }
-

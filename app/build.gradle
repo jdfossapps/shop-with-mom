@@ -6,6 +6,7 @@ android {
 	compileSdkVersion 33
 	defaultConfig {
 		applicationId 'org.jdfossapps.android.shopwithmom'
+		namespace 'org.jdfossapps.android.shopwithmom'
 		minSdkVersion 14
 		targetSdkVersion 33
 		versionCode 5

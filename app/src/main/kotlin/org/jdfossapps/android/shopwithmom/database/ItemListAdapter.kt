@@ -93,7 +93,11 @@ class ItemListAdapter internal constructor(
                             val localFormat: DateFormat = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault())
                             cabSelectedItems.forEach { 
                                 textToSend += "${it.name} "
-                                textToSend += "${it.unit_description.capitalize()}: ${mNumberFormat.format(it.unit).toString()}\n"
+                                textToSend += "${it.unit_description.replaceFirstChar {
+                                    if (it.isLowerCase()) it.titlecase(
+                                        Locale.getDefault()
+                                    ) else it.toString()
+                                }}: ${mNumberFormat.format(it.unit).toString()}\n"
                                 if(it.description.length > 0) {
                                     textToSend += "${it.description}\n"
                                 }
@@ -211,7 +215,11 @@ class ItemListAdapter internal constructor(
         
         val itemWithUnit: String = 
             if (current.unit_description.isNullOrBlank()) 
-            "${holder.itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_unit2)}" else current.unit_description.capitalize()
+            "${holder.itemView.getContext().getResources().getString(R.string.item_adapter_share_cab_unit2)}" else current.unit_description.replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(
+                    Locale.getDefault()
+                ) else it.toString()
+            }
         holder.itemViewItemNameWithUnit.text = "${current.name}  ${itemWithUnit}: " +            
             mNumberFormat.format(current.unit).toString()
 

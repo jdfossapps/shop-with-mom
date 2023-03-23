@@ -10,21 +10,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TabbedActivity">
+        <activity android:name=".TabbedActivity" android:exported="true" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" android:exported="true" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".ShoppingItemActivity">
+        <activity android:name=".ShoppingItemActivity" android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.jdfossapps.android.shopwithmom.ShoppingItemActivity" />
+                android:value="org.jdfossapps.android.shopwithmom.ShoppingItemActivity" android:exported="true"/>
         </activity>
-        <activity android:name=".PreferencesActivity"
+        <activity android:name=".PreferencesActivity" android:exported="true"
             android:label="@string/activity_settings_title" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

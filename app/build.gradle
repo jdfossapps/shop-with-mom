@@ -61,7 +61,7 @@ task addCurrentDate() {
             def date = new Date().format("ddMMyyyyhhmmss")
             def fileName = "shop-with-mom" + "-" + variant.name + "-" + 
                 variant.versionName + "-" + variant.versionCode + "-" + date + ".apk"
-            output.outputFileName = fileName
+            output.outputFileName = new File(output.outputFile.parent, fileName).getName()
         }
     }
 }

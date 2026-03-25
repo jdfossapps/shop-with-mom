@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-	compileSdkVersion 33
+	compileSdkVersion = 33
 	defaultConfig {
 		// applicationId 'org.jdfossapps.android.shopwithmom'
 		// namespace 'org.jdfossapps.android.shopwithmom'
@@ -66,7 +66,7 @@ android {
 			// zipAlignEnabled true
 			signingConfig = signingConfigs.release
 			debuggable = false
-			minifyEnabled = true
+			//minifyEnabled = true
 			shrinkResources = true
 			zipAlignEnabled = true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

@@ -75,13 +75,10 @@ android {
 			// zipAlignEnabled true
 			signingConfig = signingConfigs.release
 			debuggable = false
-			minifyEnabled = true
+			//minifyEnabled = true
 			shrinkResources = true
-			//isMinifyEnabled = true
-			//isShrinkResources = true
 			zipAlignEnabled = true
 			//v3SigningEnabled = true
-			v3SigningEnabled = true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}

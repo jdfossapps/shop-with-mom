@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 import androidx.lifecycle.MutableLiveData
 import android.text.TextUtils
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.switchMap
 
 class ItemViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -26,14 +26,13 @@ class ItemViewModel(application: Application) : AndroidViewModel(application) {
         val itemsDao = ItemRoomDatabase.getDatabase(application, viewModelScope).itemDao()
         repository = ItemRepository(itemsDao)
 
-        allItems = Transformations.switchMap(searchStringLiveData, {
-            query->
+        allItems = searchStringLiveData.switchMap { query: String ->
             if (TextUtils.isEmpty(query)) {
                 repository.allItems
             } else {
                 repository.itemsFromSearchBar(query)
             }
-        })
+        }
     }
 
     /**

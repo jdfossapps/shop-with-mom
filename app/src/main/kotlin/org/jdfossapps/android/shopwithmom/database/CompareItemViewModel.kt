@@ -9,7 +9,6 @@ import kotlinx.coroutines.launch
 
 import androidx.lifecycle.MutableLiveData
 import android.text.TextUtils
-import androidx.lifecycle.Transformations
 
 class CompareItemViewModel(application: Application) : AndroidViewModel(application) {
 

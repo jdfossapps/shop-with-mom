@@ -1,10 +1,9 @@
 buildscript {
 	//ext.kotlin_version = '1.6.21'
     //ext.android_gradle_plugin = '7.4.2'
-	// ext.kotlin_version = '1.9.24'
-	ext.kotlin_version = '2.2.10'
-    ext.android_gradle_plugin = '9.1.0'
-    ext.ksp_version = '2.2.10-1.0.21' // Asegúrate de que coincida con la versión de Kotlin
+	ext.kotlin_version = '2.1.0'
+    ext.android_gradle_plugin = '8.7.2'
+    ext.ksp_version = '2.1.0-1.0.29' // Compatible con Kotlin 2.1.0
 	repositories {
 		google()
 		mavenCentral()
@@ -12,7 +11,7 @@ buildscript {
 	dependencies {
 		classpath "com.android.tools.build:gradle:$android_gradle_plugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$ksp_version"
+        classpath "com.google.devtools.ksp:symbol-processing-gradle-plugin:$ksp_version"
 	}
 }
 

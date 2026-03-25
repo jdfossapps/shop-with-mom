@@ -61,19 +61,32 @@ android {
 	
 }
 
-task addCurrentDate() {
-    android.applicationVariants.all { variant ->
-        variant.outputs.all { output ->
+// task addCurrentDate() {
+//     android.applicationVariants.all { variant ->
+//         variant.outputs.all { output ->
+//             def date = new Date().format("ddMMyyyyhhmmss")
+//             def fileName = "shop-with-mom" + "-" + variant.name + "-" + 
+//                 variant.versionName + "-" + variant.versionCode + "-" + date + ".apk"
+//             output.outputFileName = new File(output.outputFile.parent, fileName).getName()
+//         }
+//     }
+// }
+
+androidComponents {
+    onVariants(selector().all(), { variant ->
+        variant.outputs.each { output ->
             def date = new Date().format("ddMMyyyyhhmmss")
-            def fileName = "shop-with-mom" + "-" + variant.name + "-" + 
-                variant.versionName + "-" + variant.versionCode + "-" + date + ".apk"
-            output.outputFileName = new File(output.outputFile.parent, fileName).getName()
+            def vn = output.versionName.get()
+            def vc = output.versionCode.get()
+            def newName = "shop-with-mom-${variant.name}-${vn}-${vc}-${date}.apk"
+            output.outputFileName.set(newName)
         }
-    }
+    })
 }
 
 dependencies {
-	implementation fileTree(dir: 'libs', include: ['*.jar']) //Delete?
+	// implementation fileTree(dir: 'libs', include: ['*.jar']) //Delete?
+	implementation fileTree('libs')
 	implementation 'androidx.appcompat:appcompat:1.2.0'
 	implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 	implementation 'com.google.android.material:material:1.3.0-alpha03' //Borrarlo si no funciona

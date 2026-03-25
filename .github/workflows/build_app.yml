@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-java@v5
       with:
         java-version: 1.11
+        distribution: 'temurin'
+        cache: 'gradle' 
     - name: Get keystore file
       run: 'echo "${{ secrets.ANDROID_RELEASE_STORE_FILE }}" | base64 -d > jdfossapps.keystore'
     - name: Create Gradle Wrapper

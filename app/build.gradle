@@ -78,7 +78,7 @@ android {
 			//minifyEnabled = true
 			shrinkResources = true
 			zipAlignEnabled = true
-			v3SigningEnabled = true
+			//v3SigningEnabled = true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}

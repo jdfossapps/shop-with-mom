@@ -75,7 +75,7 @@ android {
 			// zipAlignEnabled true
 			signingConfig = signingConfigs.release
 			debuggable = false
-			//minifyEnabled = true
+			minifyEnabled = true
 			shrinkResources = true
 			zipAlignEnabled = true
 			//v3SigningEnabled = true

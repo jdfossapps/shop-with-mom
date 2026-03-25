@@ -10,13 +10,21 @@ plugins {
 android {
 	compileSdkVersion 33
 	defaultConfig {
-		applicationId 'org.jdfossapps.android.shopwithmom'
-		namespace 'org.jdfossapps.android.shopwithmom'
-		minSdkVersion 15
-		targetSdkVersion 33
-		versionCode 5
-		versionName '0.0.5'
-		testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+		// applicationId 'org.jdfossapps.android.shopwithmom'
+		// namespace 'org.jdfossapps.android.shopwithmom'
+		// minSdkVersion 15
+		// targetSdkVersion 33
+		// versionCode 5
+		// versionName '0.0.5'
+		// testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+		applicationId = 'org.jdfossapps.android.shopwithmom'
+		namespace = 'org.jdfossapps.android.shopwithmom'
+		minSdk = 15
+		targetSdk = 35
+		versionCode = 5
+		versionName = '0.0.5'
+		testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
+		
 		vectorDrawables.useSupportLibrary = true
 
 		//For Room Kotlin
@@ -39,8 +47,10 @@ android {
 			keyPassword System.getenv("ANDROID_RELEASE_KEY_PASSWORD").toString() ?: ""
 
 			// Optional, specify signing 	versions used
-			v1SigningEnabled true
-			v2SigningEnabled true
+			// v1SigningEnabled true
+			// v2SigningEnabled true
+			v1SigningEnabled = true
+			v2SigningEnabled = true
 		}
 	}
 
@@ -49,11 +59,16 @@ android {
 		// 	debuggable true
 		// }
 		release {
-			signingConfig signingConfigs.release
-			debuggable false
-			minifyEnabled true
-			shrinkResources true
-			zipAlignEnabled true
+			// signingConfig signingConfigs.release
+			// debuggable false
+			// minifyEnabled true
+			// shrinkResources true
+			// zipAlignEnabled true
+			signingConfig = signingConfigs.release
+			debuggable = false
+			minifyEnabled = true
+			shrinkResources = true
+			zipAlignEnabled = true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}

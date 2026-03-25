@@ -28,12 +28,21 @@ android {
 		vectorDrawables.useSupportLibrary = true
 
 		//For Room Kotlin
-		kapt {
-            arguments {
-                arg("room.schemaLocation", "$projectDir/schemas".toString())
-				arg("room.incremental", "true")
-				arg("room.expandProjection", "true")
+		// kapt {
+        //     arguments {
+        //         arg("room.schemaLocation", "$projectDir/schemas".toString())
+		// 		arg("room.incremental", "true")
+		// 		arg("room.expandProjection", "true")
 
+        //     }
+        // }
+		javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                    "room.schemaLocation": "$projectDir/schemas".toString(),
+                    "room.incremental": "true",
+                    "room.expandProjection": "true"
+                ]
             }
         }
 	}
@@ -69,6 +78,7 @@ android {
 			//minifyEnabled = true
 			shrinkResources = true
 			zipAlignEnabled = true
+			v3SigningEnabled = true
 			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 		}
 	}

@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-	compileSdkVersion = 35
+	//compileSdkVersion = 35
 	compileSdk = 35
 	defaultConfig {
 		// applicationId 'org.jdfossapps.android.shopwithmom'

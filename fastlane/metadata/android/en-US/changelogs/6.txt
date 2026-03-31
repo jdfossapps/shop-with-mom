@@ -1,0 +1,1 @@
+Changing min android version to Android 5
